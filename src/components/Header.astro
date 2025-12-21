@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const navItems = [
   { name: 'Tính năng', href: '#features' },
   { name: 'Lợi ích', href: '#benefits' },
@@ -10,9 +12,8 @@ const navItems = [
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
   <nav class="container-custom">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-gradient">RMS</span>
-        <span class="text-sm text-gray-400">Restaurant Management</span>
+      <a href="/" class="flex items-center">
+        <Logo size="md" showText={true} />
       </a>
 
       <div class="hidden md:flex items-center space-x-8">
@@ -29,13 +30,13 @@ const navItems = [
       <div class="flex items-center space-x-4">
         <a
           href="#contact"
-          class="px-4 py-2 text-gray-300 font-medium hover:text-white transition-colors"
+          class="md:px-4 md:py-2 text-gray-300 font-medium hover:text-white transition-colors"
         >
           Đăng nhập
         </a>
         <a
           href="#contact"
-          class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50"
+          class="md:px-6 px-3 py-1.5 md:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50"
         >
           Bắt đầu miễn phí
         </a>
