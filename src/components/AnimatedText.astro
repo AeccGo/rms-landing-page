@@ -1,0 +1,88 @@
+---
+interface Props {
+  words: string[];
+}
+
+const { words } = Astro.props;
+const uniqueId = `animated-text-${Math.random().toString(36).substr(2, 9)}`;
+const wordsJson = JSON.stringify(words);
+---
+
+<span 
+  id={uniqueId} 
+  class="text-gradient font-bold inline-block min-w-[200px]" 
+  data-words={wordsJson}
+></span>
+
+<script>
+  (function() {
+    const scriptId = 'animated-text-script-' + Math.random().toString(36).substr(2, 9);
+    
+    function initAllAnimations() {
+      const animatedElements = document.querySelectorAll('[data-words]');
+      
+      animatedElements.forEach((element) => {
+        const wordsAttr = element.getAttribute('data-words');
+        if (!wordsAttr) return;
+        
+        let words: string[];
+        try {
+          words = JSON.parse(wordsAttr);
+        } catch (e) {
+          console.error('Error parsing words:', e);
+          return;
+        }
+        
+        if (!words || words.length === 0) return;
+        
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        let timeoutId: number | null = null;
+
+        function typeWord() {
+          if (!element) return;
+
+          const currentWord = words[currentWordIndex];
+          
+          if (isDeleting) {
+            element.textContent = currentWord.substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+            typingSpeed = 50;
+          } else {
+            element.textContent = currentWord.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+            typingSpeed = 100;
+          }
+
+          if (!isDeleting && currentCharIndex === currentWord.length) {
+            typingSpeed = 2000; // Pause at end of word
+            isDeleting = true;
+          } else if (isDeleting && currentCharIndex === 0) {
+            isDeleting = false;
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            typingSpeed = 500; // Pause before typing next word
+          }
+
+          timeoutId = window.setTimeout(typeWord, typingSpeed);
+        }
+
+        // Start typing animation after a delay
+        setTimeout(() => {
+          if (element && words.length > 0) {
+            typeWord();
+          }
+        }, 1000);
+      });
+    }
+
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAllAnimations);
+    } else {
+      // DOM is already ready
+      initAllAnimations();
+    }
+  })();
+</script>

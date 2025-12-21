@@ -1,0 +1,68 @@
+---
+---
+
+<section id="contact" class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white section-padding relative overflow-hidden">
+      <!-- Background effects -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Sẵn sàng bắt đầu?
+          </h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Đăng ký ngay để sử dụng <span class="text-gradient font-semibold">miễn phí hoàn toàn</span>. Không cần thẻ tín dụng, không giới hạn.
+          </p>
+
+          <form id="cta-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              id="email-input"
+              name="email"
+              placeholder="Nhập email của bạn"
+              required
+              class="flex-1 px-4 py-3 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <button
+              type="submit"
+              id="submit-btn"
+              class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50"
+            >
+              Bắt đầu ngay
+            </button>
+          </form>
+
+          <p class="mt-4 text-sm text-gray-400">
+            ✨ <span class="text-gradient font-semibold">Miễn phí mãi mãi</span> • Không giới hạn • Không cần thẻ tín dụng
+          </p>
+        </div>
+      </div>
+    </section>
+
+<script>
+  const form = document.getElementById('cta-form');
+  const emailInput = document.getElementById('email-input') as HTMLInputElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+  if (form && emailInput && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Xử lý submit form ở đây
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Đã gửi!';
+      submitBtn.disabled = true;
+      
+      // Reset sau 3 giây
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        emailInput.value = '';
+      }, 3000);
+    });
+  }
+</script>
+

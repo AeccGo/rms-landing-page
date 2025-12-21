@@ -1,0 +1,46 @@
+---
+const navItems = [
+  { name: 'Tính năng', href: '#features' },
+  { name: 'Lợi ích', href: '#benefits' },
+  { name: 'Giá cả', href: '#pricing' },
+  { name: 'Liên hệ', href: '#contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
+  <nav class="container-custom">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold text-gradient">RMS</span>
+        <span class="text-sm text-gray-400">Restaurant Management</span>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-gray-300 hover:text-white transition-colors font-medium"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <a
+          href="#contact"
+          class="px-4 py-2 text-gray-300 font-medium hover:text-white transition-colors"
+        >
+          Đăng nhập
+        </a>
+        <a
+          href="#contact"
+          class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50"
+        >
+          Bắt đầu miễn phí
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+

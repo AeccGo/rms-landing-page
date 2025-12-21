@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+
+const title = 'Hệ thống quản lý nhà hàng toàn diện | RMS - Miễn phí hoàn toàn';
+const description = 'Giải pháp quản lý nhà hàng hiện đại miễn phí hoàn toàn với đầy đủ tính năng: quản lý đơn hàng, bàn, menu, nhân viên, báo cáo. Tăng hiệu quả vận hành và doanh thu.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div class="container-custom h-screen flex items-center justify-center relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl !leading-[1.35] sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+            Quản lý nhà hàng{' '}
+            <span class="text-gradient font-bold inline-block min-w-[200px]" id="hero-animated-text" data-words='["thông minh", "miễn phí", "hiện đại", "toàn diện"]'></span>
+            <br />
+            <span class="text-gradient">Tăng trưởng bền vững</span>
+          </h1>
+          
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const animatedText = document.getElementById('hero-animated-text');
+              if (!animatedText) return;
+              
+              const wordsAttr = animatedText.getAttribute('data-words');
+              if (!wordsAttr) return;
+              
+              let words: string[];
+              try {
+                words = JSON.parse(wordsAttr);
+              } catch (e) {
+                console.error('Error parsing words:', e);
+                return;
+              }
+              
+              if (!words || words.length === 0) return;
+              
+              let currentWordIndex = 0;
+              let currentCharIndex = 0;
+              let isDeleting = false;
+              let typingSpeed = 100;
+              
+              function typeWord() {
+                if (!animatedText) return;
+                
+                const currentWord = words[currentWordIndex];
+                
+                if (isDeleting) {
+                  animatedText.textContent = currentWord.substring(0, currentCharIndex - 1);
+                  currentCharIndex--;
+                  typingSpeed = 50;
+                } else {
+                  animatedText.textContent = currentWord.substring(0, currentCharIndex + 1);
+                  currentCharIndex++;
+                  typingSpeed = 100;
+                }
+                
+                if (!isDeleting && currentCharIndex === currentWord.length) {
+                  typingSpeed = 2000;
+                  isDeleting = true;
+                } else if (isDeleting && currentCharIndex === 0) {
+                  isDeleting = false;
+                  currentWordIndex = (currentWordIndex + 1) % words.length;
+                  typingSpeed = 500;
+                }
+                
+                setTimeout(typeWord, typingSpeed);
+              }
+              
+              setTimeout(() => {
+                if (animatedText && words.length > 0) {
+                  typeWord();
+                }
+              }, 1000);
+            });
+          </script>
+          <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
+            Hệ thống quản lý nhà hàng toàn diện <span class="text-gradient font-semibold">miễn phí hoàn toàn</span> với đầy đủ tính năng từ quản lý đơn hàng, 
+            bàn, menu đến báo cáo doanh thu. Giúp bạn vận hành hiệu quả và tăng trưởng nhanh chóng.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+            <a
+              href="#contact"
+              class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105"
+            >
+              Bắt đầu miễn phí ngay
+            </a>
+            <a
+              href="#features"
+              class="px-8 py-4 bg-transparent text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors border-2 border-white/30 hover:border-white/50"
+            >
+              Xem tính năng
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-400 animate-fade-in-up">
+            ✨ <span class="text-gradient font-semibold">Miễn phí hoàn toàn</span> • Không giới hạn • Không cần thẻ tín dụng • Hỗ trợ 24/7
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Tính năng đầy đủ cho nhà hàng của bạn
+          </h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Tất cả công cụ bạn cần để quản lý nhà hàng hiệu quả, từ đơn giản đến phức tạp - <span class="text-gradient font-semibold">hoàn toàn miễn phí</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard
+            icon="🍽️"
+            title="Quản lý Menu"
+            description="Tạo và quản lý menu dễ dàng với hình ảnh, giá cả, danh mục. Cập nhật real-time cho tất cả các kênh."
+          />
+          <FeatureCard
+            icon="📋"
+            title="Quản lý Đơn hàng"
+            description="Xử lý đơn hàng nhanh chóng, theo dõi trạng thái real-time, in hóa đơn tự động và quản lý thanh toán."
+          />
+          <FeatureCard
+            icon="🪑"
+            title="Quản lý Bàn"
+            description="Sơ đồ bàn trực quan, đặt bàn online, theo dõi trạng thái bàn real-time, tối ưu sử dụng không gian."
+          />
+          <FeatureCard
+            icon="👥"
+            title="Quản lý Nhân viên"
+            description="Phân quyền chi tiết, chấm công, tính lương tự động, theo dõi hiệu suất làm việc của nhân viên."
+          />
+          <FeatureCard
+            icon="📊"
+            title="Báo cáo & Phân tích"
+            description="Dashboard trực quan với báo cáo doanh thu, chi phí, lợi nhuận. Phân tích xu hướng và dự báo."
+          />
+          <FeatureCard
+            icon="💳"
+            title="Thanh toán đa dạng"
+            description="Hỗ trợ nhiều hình thức thanh toán: tiền mặt, thẻ, ví điện tử, QR code. Tích hợp POS hiện đại."
+          />
+          <FeatureCard
+            icon="📱"
+            title="Đặt hàng QR"
+            description="Khách hàng quét QR code để xem menu và đặt món trực tiếp từ điện thoại, giảm thời gian chờ đợi."
+          />
+          <FeatureCard
+            icon="📦"
+            title="Quản lý Kho"
+            description="Theo dõi tồn kho real-time, cảnh báo hết hàng, quản lý nhập xuất, tính giá vốn tự động."
+          />
+          <FeatureCard
+            icon="🔔"
+            title="Thông báo & Nhắc nhở"
+            description="Thông báo đơn hàng mới, nhắc nhở bàn sắp hết giờ, cảnh báo tồn kho, thông báo khuyến mãi."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section-padding bg-black">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Tại sao chọn RMS?
+            </h2>
+            <p class="text-xl text-gray-400">
+              Giải pháp <span class="text-gradient font-semibold">miễn phí hoàn toàn</span> được tin dùng bởi hàng trăm nhà hàng trên toàn quốc
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 hover:border-purple-500/50 transition-colors">
+              <div class="text-3xl mb-4">⚡</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Tăng hiệu quả 300%</h3>
+              <p class="text-gray-400">
+                Tự động hóa các quy trình, giảm thời gian xử lý đơn hàng, tăng tốc độ phục vụ khách hàng.
+              </p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 hover:border-purple-500/50 transition-colors">
+              <div class="text-3xl mb-4">💰</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Tăng doanh thu 25%</h3>
+              <p class="text-gray-400">
+                Phân tích dữ liệu thông minh giúp tối ưu menu, giá cả và chiến lược bán hàng.
+              </p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 hover:border-purple-500/50 transition-colors">
+              <div class="text-3xl mb-4">📱</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Mọi lúc, mọi nơi</h3>
+              <p class="text-gray-400">
+                Quản lý nhà hàng từ bất kỳ đâu với ứng dụng web responsive và mobile app.
+              </p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 hover:border-purple-500/50 transition-colors">
+              <div class="text-3xl mb-4">🔒</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Bảo mật cao</h3>
+              <p class="text-gray-400">
+                Dữ liệu được mã hóa, sao lưu tự động, tuân thủ các tiêu chuẩn bảo mật quốc tế.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <span class="text-gradient">Miễn phí hoàn toàn</span> - Không giới hạn
+          </h2>
+          <p class="text-xl text-gray-400">
+            Tất cả tính năng đều miễn phí, không có giới hạn, không có chi phí ẩn
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-500/50 rounded-2xl p-12 text-center shadow-2xl shadow-purple-500/20">
+            <div class="mb-6">
+              <span class="text-6xl font-bold text-gradient">0₫</span>
+              <p class="text-gray-400 mt-2">Miễn phí mãi mãi</p>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-6">Tất cả tính năng Premium</h3>
+            <ul class="space-y-4 mb-8 text-left max-w-md mx-auto">
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Không giới hạn cửa hàng
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Tất cả tính năng quản lý
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Báo cáo & phân tích đầy đủ
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Đặt hàng QR code
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Quản lý kho nâng cao
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                API tích hợp
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Hỗ trợ 24/7
+              </li>
+              <li class="flex items-center text-gray-300">
+                <span class="text-green-400 mr-3 text-xl">✓</span>
+                Cập nhật miễn phí mãi mãi
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="inline-block px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105"
+            >
+              Bắt đầu ngay - Hoàn toàn miễn phí
+            </a>
+            <p class="mt-6 text-sm text-gray-500">
+              Không cần thẻ tín dụng • Không có thời gian dùng thử • Miễn phí mãi mãi
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
