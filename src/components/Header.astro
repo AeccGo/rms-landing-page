@@ -1,11 +1,12 @@
 ---
 import Logo from './Logo.astro';
+import ContactModal from './ContactModal.astro';
 
 const navItems = [
-  { name: 'Tính năng', href: '#features' },
-  { name: 'Lợi ích', href: '#benefits' },
-  { name: 'Giá cả', href: '#pricing' },
-  { name: 'Liên hệ', href: '#contact' },
+  { name: 'Trang chủ', href: '/' },
+  { name: 'Tính năng', href: '/features' },
+  { name: 'Lợi ích', href: '/benefits' },
+  { name: 'Về chúng tôi', href: '/about' },
 ];
 ---
 
@@ -29,19 +30,20 @@ const navItems = [
 
       <div class="flex items-center space-x-4">
         <a
-          href="#contact"
+          href="/"
           class="md:px-4 md:py-2 text-gray-300 font-medium hover:text-white transition-colors"
         >
           Đăng nhập
         </a>
-        <a
-          href="#contact"
-          class="md:px-6 px-3 py-1.5 md:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50"
+        <button
+          onclick="window.openContactModal && window.openContactModal()"
+          class="md:px-6 px-3 py-1.5 md:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 cursor-pointer"
         >
           Bắt đầu miễn phí
-        </a>
+        </button>
       </div>
     </div>
   </nav>
+  <ContactModal />
 </header>
 

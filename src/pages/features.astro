@@ -1,0 +1,413 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import ContactModal from '../components/ContactModal.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = 'Tính năng | RMS - Hệ thống quản lý nhà hàng toàn diện';
+const description = 'Khám phá tất cả các tính năng mạnh mẽ của RMS: quản lý menu, đơn hàng, bàn, nhân viên, báo cáo, thanh toán và nhiều hơn nữa. Hoàn toàn miễn phí.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-24">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div class="container-custom py-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+            Tính năng <span class="text-gradient">đầy đủ</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up">
+            Tất cả công cụ bạn cần để quản lý nhà hàng hiệu quả, từ đơn giản đến phức tạp - 
+            <span class="text-gradient font-semibold">hoàn toàn miễn phí</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Features Section -->
+    <section class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Tất cả tính năng bạn cần
+          </h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            RMS cung cấp đầy đủ các tính năng quản lý nhà hàng chuyên nghiệp, giúp bạn vận hành hiệu quả và tăng trưởng bền vững
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard
+            icon="🍽️"
+            title="Quản lý Menu"
+            description="Tạo và quản lý menu dễ dàng với hình ảnh, giá cả, danh mục. Cập nhật real-time cho tất cả các kênh."
+          />
+          <FeatureCard
+            icon="📋"
+            title="Quản lý Đơn hàng"
+            description="Xử lý đơn hàng nhanh chóng, theo dõi trạng thái real-time, in hóa đơn tự động và quản lý thanh toán."
+          />
+          <FeatureCard
+            icon="🪑"
+            title="Quản lý Bàn"
+            description="Sơ đồ bàn trực quan, đặt bàn online, theo dõi trạng thái bàn real-time, tối ưu sử dụng không gian."
+          />
+          <FeatureCard
+            icon="👥"
+            title="Quản lý Nhân viên"
+            description="Phân quyền chi tiết, chấm công, tính lương tự động, theo dõi hiệu suất làm việc của nhân viên."
+          />
+          <FeatureCard
+            icon="📊"
+            title="Báo cáo & Phân tích"
+            description="Dashboard trực quan với báo cáo doanh thu, chi phí, lợi nhuận. Phân tích xu hướng và dự báo."
+          />
+          <FeatureCard
+            icon="💳"
+            title="Thanh toán đa dạng"
+            description="Hỗ trợ nhiều hình thức thanh toán: tiền mặt, thẻ, ví điện tử, QR code. Tích hợp POS hiện đại."
+          />
+          <FeatureCard
+            icon="📱"
+            title="Đặt hàng QR"
+            description="Khách hàng quét QR code để xem menu và đặt món trực tiếp từ điện thoại, giảm thời gian chờ đợi."
+          />
+          <FeatureCard
+            icon="📦"
+            title="Quản lý Kho"
+            description="Theo dõi tồn kho real-time, cảnh báo hết hàng, quản lý nhập xuất, tính giá vốn tự động."
+          />
+          <FeatureCard
+            icon="🔔"
+            title="Thông báo & Nhắc nhở"
+            description="Thông báo đơn hàng mới, nhắc nhở bàn sắp hết giờ, cảnh báo tồn kho, thông báo khuyến mãi."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features Section -->
+    <section class="section-padding bg-black">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Chi tiết <span class="text-gradient">tính năng</span>
+            </h2>
+            <p class="text-xl text-gray-400">
+              Tìm hiểu sâu hơn về từng tính năng và cách chúng giúp nhà hàng của bạn phát triển
+            </p>
+          </div>
+
+          <div class="space-y-12">
+            <!-- Feature Detail 1 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">🍽️</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Menu</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Hệ thống quản lý menu của RMS cho phép bạn tạo và quản lý menu một cách dễ dàng và trực quan. 
+                    Bạn có thể thêm hình ảnh đẹp mắt cho từng món ăn, thiết lập giá cả linh hoạt, phân loại theo danh mục, 
+                    và cập nhật thông tin real-time cho tất cả các kênh bán hàng.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quản lý nhiều menu cho nhiều chi nhánh</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thiết lập giá theo giờ, ngày, hoặc khuyến mãi</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quản lý tồn kho và hiển thị món hết hàng tự động</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Xuất menu PDF để in hoặc chia sẻ</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 2 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">📋</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Đơn hàng</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Xử lý đơn hàng nhanh chóng và hiệu quả với hệ thống quản lý đơn hàng thông minh. Theo dõi trạng thái 
+                    đơn hàng real-time, in hóa đơn tự động, và quản lý thanh toán một cách chuyên nghiệp.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Theo dõi đơn hàng từ lúc đặt đến khi hoàn thành</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>In hóa đơn tự động với nhiều mẫu đẹp</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quản lý đơn hàng tại chỗ và đơn hàng mang đi</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Lịch sử đơn hàng chi tiết để tra cứu</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 3 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">🪑</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Bàn</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Sơ đồ bàn trực quan giúp bạn quản lý không gian nhà hàng một cách hiệu quả. Đặt bàn online, theo dõi 
+                    trạng thái bàn real-time, và tối ưu hóa việc sử dụng không gian để phục vụ nhiều khách hàng hơn.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Sơ đồ bàn trực quan, dễ sử dụng</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Đặt bàn online cho khách hàng</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Theo dõi thời gian sử dụng bàn</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Nhắc nhở bàn sắp hết giờ</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 4 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">👥</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Nhân viên</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Quản lý nhân viên một cách chuyên nghiệp với hệ thống phân quyền chi tiết, chấm công tự động, 
+                    tính lương, và theo dõi hiệu suất làm việc. Giúp bạn quản lý đội ngũ hiệu quả hơn.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Phân quyền chi tiết theo vai trò</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Chấm công tự động và tính lương</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Theo dõi hiệu suất và doanh thu theo nhân viên</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quản lý ca làm việc và lịch trực</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 5 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">📊</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Báo cáo & Phân tích</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Dashboard trực quan với các báo cáo chi tiết về doanh thu, chi phí, lợi nhuận. Phân tích xu hướng 
+                    và đưa ra dự báo để giúp bạn đưa ra quyết định kinh doanh thông minh hơn.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Dashboard trực quan với biểu đồ và số liệu</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Báo cáo doanh thu, chi phí, lợi nhuận theo ngày/tuần/tháng</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Phân tích món ăn bán chạy và xu hướng</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Xuất báo cáo PDF để chia sẻ hoặc in</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 6 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">💳</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Thanh toán đa dạng</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Hỗ trợ nhiều hình thức thanh toán để đáp ứng nhu cầu đa dạng của khách hàng. Từ tiền mặt, thẻ tín dụng, 
+                    ví điện tử đến QR code, tất cả đều được tích hợp một cách mượt mà.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thanh toán tiền mặt, thẻ, ví điện tử</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thanh toán QR code nhanh chóng</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Tích hợp POS hiện đại</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hỗ trợ thanh toán trả góp</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 7 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">📱</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Đặt hàng QR</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Khách hàng chỉ cần quét QR code để xem menu và đặt món trực tiếp từ điện thoại. Giảm thời gian chờ đợi, 
+                    tăng trải nghiệm khách hàng, và giảm tải công việc cho nhân viên.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quét QR code để xem menu ngay lập tức</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Đặt món trực tiếp từ điện thoại</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thanh toán online ngay trên điện thoại</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Giảm thời gian chờ đợi và tăng hiệu quả phục vụ</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 8 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">📦</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Kho</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Theo dõi tồn kho real-time, cảnh báo hết hàng tự động, quản lý nhập xuất kho, và tính giá vốn tự động. 
+                    Giúp bạn kiểm soát chi phí và đảm bảo luôn có đủ nguyên liệu phục vụ.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Theo dõi tồn kho real-time</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Cảnh báo hết hàng tự động</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quản lý nhập xuất kho chi tiết</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Tính giá vốn và lợi nhuận tự động</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Detail 9 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-6">
+                <div class="text-5xl">🔔</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-4 text-white">Thông báo & Nhắc nhở</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Hệ thống thông báo thông minh giúp bạn không bỏ lỡ bất kỳ thông tin quan trọng nào. Từ thông báo đơn hàng mới, 
+                    nhắc nhở bàn sắp hết giờ, đến cảnh báo tồn kho và thông báo khuyến mãi.
+                  </p>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thông báo đơn hàng mới ngay lập tức</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Nhắc nhở bàn sắp hết giờ</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Cảnh báo tồn kho thấp</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thông báo khuyến mãi và sự kiện</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</BaseLayout>
+

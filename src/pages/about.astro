@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TeamMemberCard from '../components/TeamMemberCard.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = 'Về chúng tôi | RMS - Đội ngũ phát triển hệ thống quản lý nhà hàng';
+const description = 'Tìm hiểu về đội ngũ phát triển RMS, mục tiêu và tầm nhìn của chúng tôi trong việc tạo ra giải pháp quản lý nhà hàng miễn phí, hiện đại và toàn diện.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-24">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div class="container-custom py-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+            Về <span class="text-gradient">chúng tôi</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up">
+            Chúng tôi là những con người trẻ có niềm đam mê với phần mềm, cùng nhau phát triển hệ thống 
+            quản lý nhà hàng <span class="text-gradient font-semibold">miễn phí hoàn toàn</span> nhằm hỗ trợ chủ doanh nghiệp quản lý vận hành và 
+            nâng cao trải nghiệm khách hàng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- Team Section -->
+    <section class="section-padding bg-black">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Đội ngũ <span class="text-gradient">phát triển</span>
+          </h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Những con người trẻ với niềm đam mê phần mềm, cùng nhau tạo ra giá trị cho cộng đồng
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <TeamMemberCard
+            name="Nguyễn Văn A"
+            role="Founder & CEO"
+            bio="Với hơn 10 năm kinh nghiệm trong phát triển phần mềm và quản lý dự án, đam mê tạo ra các giải pháp công nghệ giúp doanh nghiệp phát triển."
+          />
+          <TeamMemberCard
+            name="Trần Thị B"
+            role="CTO & Lead Developer"
+            bio="Chuyên gia về kiến trúc hệ thống và phát triển full-stack. Đam mê xây dựng các sản phẩm công nghệ hiện đại, hiệu năng cao."
+          />
+          <TeamMemberCard
+            name="Lê Văn C"
+            role="Product Manager"
+            bio="Chuyên gia về UX/UI và quản lý sản phẩm. Luôn đặt trải nghiệm người dùng lên hàng đầu trong mọi quyết định sản phẩm."
+          />
+          <TeamMemberCard
+            name="Phạm Thị D"
+            role="Backend Developer"
+            bio="Chuyên gia về backend development và database optimization. Đảm bảo hệ thống hoạt động ổn định và hiệu quả."
+          />
+          <TeamMemberCard
+            name="Hoàng Văn E"
+            role="Frontend Developer"
+            bio="Chuyên gia về frontend development với React, Vue và các framework hiện đại. Tạo ra giao diện đẹp mắt và trải nghiệm mượt mà."
+          />
+          <TeamMemberCard
+            name="Võ Thị F"
+            role="DevOps Engineer"
+            bio="Chuyên gia về infrastructure và CI/CD. Đảm bảo hệ thống được triển khai an toàn, nhanh chóng và có thể mở rộng."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section - Blog Format -->
+    <section class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <article class="max-w-4xl mx-auto">
+          <!-- Blog Header -->
+          <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Mục tiêu của chúng tôi
+            </h1>
+            <p class="text-xl text-gray-400 italic">
+              Những con người trẻ với niềm đam mê phần mềm, cùng nhau xây dựng tương lai
+            </p>
+          </header>
+
+          <!-- Blog Content -->
+          <div class="prose prose-invert prose-lg max-w-none">
+            <div class="space-y-8 text-gray-300 leading-relaxed text-base md:text-lg">
+              
+              <h2 class="text-3xl font-bold text-white mt-12 mb-6">Chúng tôi là ai?</h2>
+              
+              <p>
+                Chúng tôi là một nhóm những con người trẻ tuổi, đầy nhiệt huyết và có niềm đam mê sâu sắc với lĩnh vực 
+                phát triển phần mềm. Mỗi thành viên trong đội ngũ đều mang trong mình khát vọng được tạo ra những sản phẩm 
+                công nghệ có ý nghĩa, không chỉ đơn thuần là những dòng code hay những tính năng kỹ thuật, mà là những giải 
+                pháp thực sự có thể tác động tích cực đến cuộc sống của mọi người.
+              </p>
+
+              <p>
+                Xuất phát từ những trải nghiệm thực tế và quan sát về những khó khăn mà các doanh nghiệp nhà hàng đang gặp phải 
+                trong quá trình quản lý và vận hành, chúng tôi nhận ra rằng có một khoảng trống lớn giữa nhu cầu của thị trường 
+                và các giải pháp công nghệ hiện có. Nhiều nhà hàng, đặc biệt là những cơ sở quy mô nhỏ và vừa, phải đối mặt với 
+                những thách thức trong việc tìm kiếm một hệ thống quản lý phù hợp - vừa đầy đủ tính năng, vừa dễ sử dụng, lại 
+                phải có chi phí hợp lý.
+              </p>
+
+              <p>
+                Với tinh thần đó, chúng tôi đã quyết định cùng nhau xây dựng RMS - một hệ thống quản lý nhà hàng toàn diện, 
+                được thiết kế với mục tiêu rõ ràng: <span class="text-gradient font-semibold">hỗ trợ tối đa các doanh nghiệp trong 
+                việc quản lý và vận hành nhà hàng một cách hiệu quả</span>. Chúng tôi hiểu rằng việc quản lý một nhà hàng không chỉ 
+                đơn giản là xử lý đơn hàng hay quản lý bàn, mà còn bao gồm rất nhiều khía cạnh phức tạp khác như quản lý nhân sự, 
+                kiểm soát kho hàng, phân tích dữ liệu kinh doanh, và tối ưu hóa trải nghiệm khách hàng.
+              </p>
+
+              <p>
+                Nhưng mục tiêu của chúng tôi không dừng lại ở việc tạo ra một công cụ quản lý. Chúng tôi tin rằng khi các nhà hàng 
+                có thể vận hành hiệu quả hơn, họ sẽ có nhiều thời gian và nguồn lực hơn để tập trung vào điều quan trọng nhất: 
+                <span class="text-gradient font-semibold">mang lại trải nghiệm tuyệt vời cho khách hàng</span>. Một hệ thống quản lý 
+                tốt sẽ giúp giảm thiểu thời gian chờ đợi, tăng độ chính xác trong việc phục vụ, và tạo ra một môi trường làm việc 
+                tốt hơn cho nhân viên - tất cả những điều này cuối cùng đều góp phần nâng cao sự hài lòng của khách hàng.
+              </p>
+
+              <p>
+                Hơn thế nữa, chúng tôi nhận thức được rằng việc nâng cao chất lượng dịch vụ trong ngành F&B không chỉ mang lại lợi ích 
+                cho các doanh nghiệp và khách hàng, mà còn có tác động sâu sắc đến <span class="text-gradient font-semibold">chất lượng 
+                sống của người Việt nói chung</span>. Khi người dân có thể tận hưởng những bữa ăn ngon miệng trong một môi trường phục vụ 
+                chuyên nghiệp, hiệu quả, họ sẽ có những trải nghiệm tích cực hơn trong cuộc sống hàng ngày. Điều này đặc biệt quan trọng 
+                trong bối cảnh xã hội hiện đại, nơi mà việc ăn uống không chỉ đơn thuần là nhu cầu sinh học mà còn là một phần của văn hóa 
+                và lối sống.
+              </p>
+
+              <h2 class="text-3xl font-bold text-white mt-12 mb-6">Sứ mệnh của chúng tôi</h2>
+
+              <p>
+                Sứ mệnh của chúng tôi là tạo ra một hệ thống quản lý nhà hàng hoàn toàn miễn phí, được xây dựng trên nền tảng 
+                công nghệ hiện đại và tiên tiến nhất, nhằm đáp ứng đầy đủ nhu cầu quản lý của các doanh nghiệp trong ngành F&B. 
+                Chúng tôi không chỉ tập trung vào việc phát triển các tính năng kỹ thuật, mà còn đặc biệt chú trọng đến việc 
+                tạo ra một trải nghiệm người dùng trực quan, dễ sử dụng, giúp các chủ nhà hàng và nhân viên có thể nhanh chóng 
+                làm quen và vận hành hệ thống một cách hiệu quả.
+              </p>
+
+              <p>
+                Chúng tôi hiểu rằng mỗi nhà hàng đều có những đặc thù riêng về quy mô, mô hình kinh doanh, và cách thức vận hành. 
+                Vì vậy, RMS được thiết kế với tính linh hoạt cao, cho phép các doanh nghiệp tùy chỉnh và điều chỉnh hệ thống 
+                theo nhu cầu cụ thể của mình. Từ những quán cà phê nhỏ với vài bàn, đến những nhà hàng lớn với nhiều chi nhánh, 
+                RMS đều có thể đáp ứng và hỗ trợ một cách tối ưu.
+              </p>
+
+              <p>
+                Ngoài ra, chúng tôi cam kết duy trì tính miễn phí của hệ thống một cách vĩnh viễn, không có bất kỳ chi phí ẩn 
+                hay giới hạn nào. Chúng tôi tin rằng việc tiếp cận với công nghệ quản lý hiện đại không nên là một rào cản tài 
+                chính đối với bất kỳ doanh nghiệp nào, đặc biệt là những doanh nghiệp nhỏ và vừa đang trong giai đoạn khởi nghiệp 
+                hoặc phát triển.
+              </p>
+
+              <h2 class="text-3xl font-bold text-white mt-12 mb-6">Mục tiêu và tầm nhìn</h2>
+
+              <p>
+                Mục tiêu trước mắt của chúng tôi là xây dựng và hoàn thiện một hệ thống quản lý nhà hàng toàn diện, bao gồm tất cả 
+                các chức năng cần thiết từ quản lý đơn hàng, quản lý bàn, quản lý menu, quản lý nhân viên, đến các tính năng phân tích 
+                và báo cáo chi tiết. Chúng tôi đang không ngừng cải thiện và nâng cấp hệ thống dựa trên phản hồi từ người dùng thực tế, 
+                đảm bảo rằng mỗi tính năng đều được tối ưu hóa để mang lại giá trị thực sự cho người sử dụng.
+              </p>
+
+              <p>
+                Về mặt dài hạn, chúng tôi hướng tới việc tạo ra một hệ sinh thái công nghệ hoàn chỉnh cho ngành F&B tại Việt Nam. 
+                Điều này không chỉ bao gồm việc phát triển các tính năng quản lý cơ bản, mà còn mở rộng sang các lĩnh vực như tích hợp 
+                thanh toán điện tử, kết nối với các nền tảng giao hàng, ứng dụng công nghệ trí tuệ nhân tạo để phân tích dữ liệu và 
+                đưa ra các gợi ý tối ưu hóa kinh doanh, và nhiều hơn nữa.
+              </p>
+
+              <p>
+                Một trong những mục tiêu quan trọng nhất của chúng tôi là góp phần nâng cao trải nghiệm của khách hàng khi đến với 
+                các nhà hàng. Chúng tôi tin rằng khi các nhà hàng có thể vận hành một cách trơn tru và hiệu quả, họ sẽ có nhiều thời gian 
+                và tâm trí hơn để tập trung vào việc chăm sóc khách hàng, tạo ra những trải nghiệm ẩm thực đáng nhớ. Hệ thống của chúng tôi 
+                được thiết kế để giảm thiểu các lỗi trong quá trình phục vụ, rút ngắn thời gian chờ đợi, và đảm bảo độ chính xác trong mọi 
+                giao dịch - tất cả đều góp phần tạo nên một trải nghiệm tích cực cho khách hàng.
+              </p>
+
+              <p>
+                Cuối cùng, chúng tôi mong muốn góp phần nâng cao chất lượng sống của người Việt thông qua việc cải thiện chất lượng dịch vụ 
+                trong ngành F&B. Khi người dân có thể tận hưởng những bữa ăn ngon miệng trong một môi trường phục vụ chuyên nghiệp, hiệu quả, 
+                và thân thiện, họ sẽ có những khoảnh khắc hạnh phúc hơn trong cuộc sống hàng ngày. Chúng tôi tin rằng công nghệ không chỉ là 
+                công cụ để tối ưu hóa quy trình kinh doanh, mà còn là phương tiện để tạo ra những giá trị nhân văn và góp phần xây dựng một 
+                xã hội tốt đẹp hơn.
+              </p>
+
+              <h2 class="text-3xl font-bold text-white mt-12 mb-6">Giá trị cốt lõi</h2>
+
+              <p>
+                Trong hành trình phát triển RMS, chúng tôi luôn tuân thủ và thực hiện theo những giá trị cốt lõi đã được xác định từ những 
+                ngày đầu thành lập. Những giá trị này không chỉ là kim chỉ nam cho mọi quyết định của chúng tôi, mà còn là nền tảng vững chắc 
+                để xây dựng một sản phẩm có ý nghĩa và tác động tích cực đến cộng đồng.
+              </p>
+
+              <p>
+                <strong class="text-white">Đam mê</strong> - Niềm đam mê mãnh liệt với phần mềm và công nghệ thúc đẩy chúng tôi không ngừng học hỏi và phát triển. 
+                Mỗi dòng code, mỗi tính năng đều được tạo ra với sự tận tâm và nhiệt huyết, bởi chúng tôi tin rằng chỉ có đam mê thực sự mới 
+                có thể tạo ra những sản phẩm xuất sắc.
+              </p>
+
+              <p>
+                <strong class="text-white">Miễn phí hoàn toàn</strong> - Chúng tôi cam kết không có chi phí ẩn, không giới hạn tính năng, mãi mãi miễn phí để hỗ trợ mọi doanh nghiệp. 
+                Đây không chỉ là một cam kết về giá cả, mà còn là cam kết về việc tạo ra cơ hội bình đẳng cho tất cả các doanh nghiệp, dù lớn hay nhỏ, 
+                đều có thể tiếp cận với công nghệ quản lý hiện đại.
+              </p>
+
+              <p>
+                <strong class="text-white">Vì cộng đồng</strong> - Mục tiêu của chúng tôi là nâng cao chất lượng sống của người Việt thông qua công nghệ. 
+                Mỗi tính năng, mỗi cải tiến đều hướng tới việc tạo ra giá trị thực sự cho cộng đồng, không chỉ cho các doanh nghiệp sử dụng hệ thống, 
+                mà còn cho khách hàng của họ và xã hội nói chung.
+              </p>
+
+              <p>
+                <strong class="text-white">Đổi mới liên tục</strong> - Chúng tôi luôn cập nhật công nghệ mới nhất, cải thiện trải nghiệm người dùng và khách hàng. 
+                Trong thế giới công nghệ đang thay đổi nhanh chóng, việc đứng yên đồng nghĩa với việc tụt hậu. Vì vậy, chúng tôi luôn tìm kiếm và áp dụng 
+                những công nghệ mới nhất, những phương pháp tốt nhất để không ngừng cải thiện sản phẩm của mình.
+              </p>
+
+              <p class="mt-8 text-lg">
+                Với những suy nghĩ và mục tiêu đó, chúng tôi đã và đang nỗ lực không ngừng để phát triển RMS thành một nền tảng công nghệ 
+                mạnh mẽ, thân thiện và hoàn toàn miễn phí. Chúng tôi tin rằng công nghệ tốt không nên bị giới hạn bởi khả năng tài chính, 
+                và mọi doanh nghiệp, dù lớn hay nhỏ, đều xứng đáng có cơ hội tiếp cận với những công cụ quản lý hiện đại nhất.
+              </p>
+
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection />
+  </main>
+
+  <Footer />
+</BaseLayout>
+

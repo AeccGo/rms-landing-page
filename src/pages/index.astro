@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import ContactModal from '../components/ContactModal.astro';
 
 const title = 'Hệ thống quản lý nhà hàng toàn diện | RMS - Miễn phí hoàn toàn';
 const description = 'Giải pháp quản lý nhà hàng hiện đại miễn phí hoàn toàn với đầy đủ tính năng: quản lý đơn hàng, bàn, menu, nhân viên, báo cáo. Tăng hiệu quả vận hành và doanh thu.';
@@ -92,12 +93,12 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
             bàn, menu đến báo cáo doanh thu. Giúp bạn vận hành hiệu quả và tăng trưởng nhanh chóng.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
-            <a
-              href="#contact"
-              class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105"
+            <button
+              onclick="window.openContactModal && window.openContactModal()"
+              class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105 cursor-pointer"
             >
               Bắt đầu miễn phí ngay
-            </a>
+            </button>
             <a
               href="#features"
               class="px-8 py-4 bg-transparent text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors border-2 border-white/30 hover:border-white/50"
@@ -277,12 +278,12 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
                 Cập nhật miễn phí mãi mãi
               </li>
             </ul>
-            <a
-              href="#contact"
+            <button
+               onclick="window.openContactModal && window.openContactModal()"
               class="inline-block px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105"
             >
               Bắt đầu ngay - Hoàn toàn miễn phí
-            </a>
+            </button>
             <p class="mt-6 text-sm text-gray-500">
               Không cần thẻ tín dụng • Không có thời gian dùng thử • Miễn phí mãi mãi
             </p>
@@ -296,5 +297,6 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
   </main>
 
   <Footer />
+  <ContactModal />
 </BaseLayout>
 

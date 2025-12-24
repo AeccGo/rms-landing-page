@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/ContactModal.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = 'Lợi ích | RMS - Tại sao chọn hệ thống quản lý nhà hàng của chúng tôi';
+const description = 'Khám phá những lợi ích vượt trội khi chọn RMS: phát triển nhanh, miễn phí hoàn toàn, không giới hạn, hỗ trợ tận tâm và nhiều hơn nữa.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-24">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div class="container-custom py-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+            Tại sao chọn <span class="text-gradient">RMS</span>?
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up">
+            Trong hàng tá các ứng dụng quản lý nhà hàng hiện có, RMS mang đến những lợi ích độc đáo 
+            mà bạn không thể tìm thấy ở đâu khác
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Benefits Section -->
+    <section class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Lợi ích <span class="text-gradient">vượt trội</span>
+            </h2>
+            <p class="text-xl text-gray-400">
+              Những lý do khiến RMS trở thành lựa chọn tốt nhất cho nhà hàng của bạn
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Benefit 1 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">🚀</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Phát triển liên tục và nhanh chóng</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Là một startup trẻ, chúng tôi có quy trình phát triển không cồng kềnh, cho phép chúng tôi 
+                cập nhật và cải thiện hệ thống một cách nhanh chóng. Không giống như các công ty lớn với 
+                nhiều tầng quản lý, chúng tôi có thể phản ứng nhanh với phản hồi của người dùng và triển khai 
+                các tính năng mới chỉ trong vài tuần thay vì vài tháng.
+              </p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">🆓</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Miễn phí hoàn toàn - Mãi mãi</h3>
+              <p class="text-gray-300 leading-relaxed">
+                RMS hoàn toàn miễn phí, không có chi phí ẩn, không có giới hạn thời gian dùng thử. 
+                Không giống như các giải pháp khác yêu cầu đăng ký gói trả phí sau thời gian dùng thử, 
+                chúng tôi cam kết miễn phí vĩnh viễn. Đây là cam kết của chúng tôi với cộng đồng.
+              </p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">💾</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Không giới hạn lưu trữ</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Không có giới hạn về dung lượng lưu trữ, số lượng đơn hàng, hay số lượng nhân viên. 
+                Bạn có thể lưu trữ bao nhiêu dữ liệu tùy thích mà không phải lo lắng về chi phí tăng thêm. 
+                Điều này đặc biệt quan trọng khi nhà hàng của bạn phát triển và mở rộng.
+              </p>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">⚡</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Quy trình đơn giản, không cồng kềnh</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Không có nhiều tầng quản lý hay quy trình phức tạp, chúng tôi có thể đưa ra quyết định nhanh chóng 
+                và triển khai ngay lập tức. Điều này có nghĩa là các tính năng mới, sửa lỗi, và cải tiến được 
+                thực hiện nhanh hơn nhiều so với các công ty lớn.
+              </p>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">🎯</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Tập trung vào người dùng</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Là một startup, mỗi người dùng đều quan trọng với chúng tôi. Chúng tôi lắng nghe từng phản hồi, 
+                từng đề xuất và thực sự quan tâm đến trải nghiệm của bạn. Không giống như các công ty lớn nơi 
+                bạn chỉ là một con số, ở đây bạn là một phần của cộng đồng.
+              </p>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">🔄</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Cập nhật thường xuyên</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Chúng tôi phát hành các bản cập nhật thường xuyên với các tính năng mới, cải tiến hiệu năng, 
+                và sửa lỗi. Với quy trình phát triển nhanh, bạn sẽ thấy hệ thống được cải thiện liên tục, 
+                không phải chờ đợi hàng tháng trời cho một bản cập nhật lớn.
+              </p>
+            </div>
+
+            <!-- Benefit 7 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">💡</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Đổi mới và sáng tạo</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Không bị ràng buộc bởi các quy trình cũ hay công nghệ lỗi thời, chúng tôi có thể áp dụng 
+                những công nghệ mới nhất và những ý tưởng sáng tạo nhất. Điều này cho phép chúng tôi tạo ra 
+                những tính năng độc đáo mà các hệ thống cũ không thể có.
+              </p>
+            </div>
+
+            <!-- Benefit 8 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+              <div class="text-4xl mb-4">🤝</div>
+              <h3 class="text-2xl font-bold mb-3 text-white">Hỗ trợ tận tâm</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Đội ngũ hỗ trợ của chúng tôi thực sự quan tâm đến vấn đề của bạn. Chúng tôi không sử dụng 
+                chatbot hay hệ thống ticket phức tạp - bạn sẽ được hỗ trợ trực tiếp bởi những con người thực sự 
+                hiểu sản phẩm và muốn giúp bạn thành công.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Startup Advantages Section -->
+    <section class="section-padding bg-black">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Lợi thế của một <span class="text-gradient">Startup</span>
+            </h2>
+            <p class="text-xl text-gray-400">
+              Là một startup, chúng tôi mang đến những ưu điểm độc đáo mà các công ty lớn không thể có
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg border border-purple-500/30">
+              <h3 class="text-2xl font-bold mb-4 text-white">Tốc độ và sự linh hoạt</h3>
+              <p class="text-gray-300 leading-relaxed mb-4">
+                Không có bộ máy hành chính cồng kềnh, chúng tôi có thể đưa ra quyết định trong vài giờ thay vì vài tuần. 
+                Khi bạn đề xuất một tính năng, chúng tôi có thể đánh giá và bắt đầu phát triển ngay lập tức. 
+                Điều này có nghĩa là hệ thống của bạn sẽ được cải thiện nhanh hơn nhiều so với việc sử dụng 
+                các giải pháp từ các công ty lớn.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Chúng tôi cũng có thể tùy chỉnh và điều chỉnh hệ thống theo nhu cầu cụ thể của bạn một cách nhanh chóng, 
+                không cần phải chờ đợi quy trình phê duyệt phức tạp.
+              </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg border border-purple-500/30">
+              <h3 class="text-2xl font-bold mb-4 text-white">Công nghệ hiện đại nhất</h3>
+              <p class="text-gray-300 leading-relaxed mb-4">
+                Không bị ràng buộc bởi các hệ thống cũ hay công nghệ legacy, chúng tôi xây dựng RMS từ đầu với 
+                những công nghệ mới nhất và tốt nhất. Điều này có nghĩa là hệ thống của bạn sẽ nhanh hơn, an toàn hơn, 
+                và có hiệu năng tốt hơn so với các giải pháp được xây dựng trên nền tảng cũ.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Chúng tôi sử dụng các framework và công nghệ tiên tiến nhất, đảm bảo hệ thống luôn ở trạng thái tốt nhất 
+                và có thể mở rộng dễ dàng khi bạn phát triển.
+              </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg border border-purple-500/30">
+              <h3 class="text-2xl font-bold mb-4 text-white">Mối quan hệ gần gũi với người dùng</h3>
+              <p class="text-gray-300 leading-relaxed mb-4">
+                Là một startup, mỗi người dùng đều có giá trị đặc biệt với chúng tôi. Chúng tôi thực sự lắng nghe phản hồi 
+                của bạn và coi bạn như một đối tác trong quá trình phát triển. Bạn không chỉ là khách hàng, mà còn là người 
+                giúp chúng tôi cải thiện sản phẩm.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Nhiều tính năng trong RMS được phát triển dựa trên đề xuất trực tiếp từ người dùng. Chúng tôi tin rằng 
+                những người sử dụng hệ thống hàng ngày biết rõ nhất họ cần gì, và chúng tôi luôn sẵn sàng lắng nghe.
+              </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg border border-purple-500/30">
+              <h3 class="text-2xl font-bold mb-4 text-white">Đam mê và tận tâm</h3>
+              <p class="text-gray-300 leading-relaxed mb-4">
+                Chúng tôi không chỉ làm việc vì lợi nhuận - chúng tôi làm việc vì đam mê. Mỗi thành viên trong đội ngũ đều 
+                thực sự quan tâm đến sản phẩm và muốn tạo ra điều gì đó có ý nghĩa. Điều này thể hiện trong từng tính năng, 
+                từng dòng code, và từng tương tác với người dùng.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Bạn sẽ cảm nhận được sự khác biệt khi làm việc với một đội ngũ thực sự đam mê và tận tâm với những gì họ tạo ra, 
+                thay vì chỉ làm việc như một công việc thông thường.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Addressing Startup Weaknesses Section -->
+    <section class="section-padding bg-gray-900">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Những <span class="text-gradient">yếu điểm</span> của chúng tôi
+            </h2>
+            <p class="text-xl text-gray-400">
+              Chúng tôi hiểu những lo ngại về việc sử dụng sản phẩm từ một startup. Đây là cách chúng tôi khắc phục chúng
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <!-- Weakness 1 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">⚠️</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-3 text-white">Lo ngại: Độ tin cậy và ổn định</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Vấn đề:</strong> Nhiều người lo ngại rằng startup có thể không đủ ổn định 
+                    hoặc có thể ngừng hoạt động bất cứ lúc nào.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Cách chúng tôi khắc phục:</strong>
+                  </p>
+                  <ul class="space-y-2 text-gray-300 ml-4">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Chúng tôi sử dụng infrastructure đám mây hàng đầu với uptime 99.9%</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hệ thống được thiết kế với khả năng mở rộng và dự phòng tự động</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Dữ liệu được sao lưu tự động hàng ngày và lưu trữ an toàn</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Bạn có thể xuất dữ liệu của mình bất cứ lúc nào - không bị khóa vào hệ thống</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Cam kết minh bạch về tình trạng hệ thống và thông báo trước mọi bảo trì</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weakness 2 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">👥</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-3 text-white">Lo ngại: Hỗ trợ khách hàng</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Vấn đề:</strong> Startup thường có đội ngũ nhỏ, có thể không đủ người để hỗ trợ tốt.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Cách chúng tôi khắc phục:</strong>
+                  </p>
+                  <ul class="space-y-2 text-gray-300 ml-4">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hỗ trợ trực tiếp qua nhiều kênh: email, chat, và video call</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Thời gian phản hồi nhanh - thường trong vòng vài giờ, không phải vài ngày</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Tài liệu hướng dẫn chi tiết và video tutorial đầy đủ</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Cộng đồng người dùng tích cực để chia sẻ kinh nghiệm</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Đội ngũ hỗ trợ thực sự hiểu sản phẩm - không phải chỉ đọc script</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weakness 3 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">🔒</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-3 text-white">Lo ngại: Bảo mật và quyền riêng tư</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Vấn đề:</strong> Startup có thể không có đủ nguồn lực để đảm bảo bảo mật tốt.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Cách chúng tôi khắc phục:</strong>
+                  </p>
+                  <ul class="space-y-2 text-gray-300 ml-4">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Mã hóa dữ liệu end-to-end với các tiêu chuẩn bảo mật cao nhất</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Tuân thủ các quy định về bảo vệ dữ liệu (GDPR, các tiêu chuẩn quốc tế)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Kiểm tra bảo mật định kỳ bởi các chuyên gia bên thứ ba</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Không chia sẻ dữ liệu với bên thứ ba - dữ liệu của bạn là của bạn</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hệ thống xác thực hai yếu tố (2FA) để bảo vệ tài khoản</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weakness 4 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">📈</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-3 text-white">Lo ngại: Khả năng mở rộng và phát triển</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Vấn đề:</strong> Startup có thể không đủ khả năng để mở rộng khi bạn phát triển.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Cách chúng tôi khắc phục:</strong>
+                  </p>
+                  <ul class="space-y-2 text-gray-300 ml-4">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Kiến trúc hệ thống được thiết kế để mở rộng tự động theo nhu cầu</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hỗ trợ nhiều chi nhánh, nhiều cửa hàng trên cùng một tài khoản</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Không giới hạn số lượng đơn hàng, nhân viên, hay dữ liệu</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>API mạnh mẽ để tích hợp với các hệ thống khác khi cần</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hệ thống được tối ưu để xử lý hàng nghìn giao dịch mỗi giờ</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weakness 5 -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">💼</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-3 text-white">Lo ngại: Tính chuyên nghiệp và kinh nghiệm</h3>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Vấn đề:</strong> Startup có thể thiếu kinh nghiệm và tính chuyên nghiệp.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    <strong class="text-white">Cách chúng tôi khắc phục:</strong>
+                  </p>
+                  <ul class="space-y-2 text-gray-300 ml-4">
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Đội ngũ có nhiều năm kinh nghiệm trong phát triển phần mềm doanh nghiệp</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Tuân thủ các best practices và tiêu chuẩn công nghiệp</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Quy trình phát triển chuyên nghiệp với testing, code review, và CI/CD</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Hệ thống được xây dựng với khả năng bảo trì và mở rộng lâu dài</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-purple-400 mr-2">✓</span>
+                      <span>Cam kết minh bạch về roadmap phát triển và tầm nhìn dài hạn</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</BaseLayout>
+

@@ -1,215 +1,30 @@
 ---
 ---
 
-<section id="contact" class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white section-padding relative overflow-hidden">
-      <!-- Background effects -->
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div class="container-custom relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-            Sẵn sàng bắt đầu?
+ <section class="section-padding bg-gradient-to-br from-gray-900 to-black">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Sẵn sàng trải nghiệm sự khác biệt?
           </h2>
-          <p class="text-xl text-gray-300 mb-8">
-            Đăng ký ngay để sử dụng <span class="text-gradient font-semibold">miễn phí hoàn toàn</span>. Không cần thẻ tín dụng, không giới hạn.
+          <p class="text-xl text-gray-400 mb-8">
+            Hãy thử RMS ngay hôm nay và cảm nhận sự khác biệt của một hệ thống được xây dựng bởi 
+            những con người đam mê, không phải chỉ vì lợi nhuận
           </p>
-
-          <form id="cta-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              id="email-input"
-              name="email"
-              placeholder="Nhập email của bạn"
-              required
-              class="flex-1 px-4 py-3 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              type="submit"
-              id="submit-btn"
-              class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 flex items-center justify-center gap-2"
+              onclick="window.openContactModal && window.openContactModal()"
+              class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 transform hover:scale-105 cursor-pointer"
             >
-              <span id="btn-text">Bắt đầu ngay</span>
-              <span id="btn-spinner" class="spinner hidden"></span>
+              Bắt đầu miễn phí
             </button>
-          </form>
-
-          <p class="mt-4 text-sm text-gray-400">
-            ✨ <span class="text-gradient font-semibold">Miễn phí mãi mãi</span> • Không giới hạn • Không cần thẻ tín dụng
-          </p>
+            <a
+              href="/features"
+              class="px-8 py-4 bg-transparent text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors border-2 border-white/30 hover:border-white/50"
+            >
+              Xem tính năng
+            </a>
+          </div>
         </div>
       </div>
-      
-      <!-- Toast Notification -->
-      <div id="toast" class="toast hidden">
-        <div id="toast-message" class="toast-message"></div>
-      </div>
     </section>
-
-<style>
-  .toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    min-width: 300px;
-    max-width: 500px;
-    font-size: 14px;
-    animation: slideInRight 0.3s ease-out;
-  }
-
-  .toast.hidden {
-    display: none;
-  }
-
-  .toast-message {
-    padding: 16px 20px;
-    border-radius: 8px;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-  }
-
-  .toast.success .toast-message {
-    background: linear-gradient(135deg,rgb(0, 197, 66) 0%,rgb(5, 150, 61) 100%);
-    color: white;
-  }
-
-  .toast.error .toast-message {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    color: white;
-  }
-
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideOutRight {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-
-  .toast.hiding {
-    animation: slideOutRight 0.3s ease-out forwards;
-  }
-
-  @media (max-width: 640px) {
-    .toast {
-      top: 10px;
-      right: 10px;
-      left: 10px;
-      min-width: auto;
-      max-width: none;
-    }
-  }
-
-  /* Spinner styles */
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    display: inline-block;
-  }
-
-  .spinner.hidden {
-    display: none;
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-</style>
-
-<script>
-  const form = document.getElementById('cta-form');
-  const emailInput = document.getElementById('email-input') as HTMLInputElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const btnText = document.getElementById('btn-text');
-  const btnSpinner = document.getElementById('btn-spinner');
-  const toast = document.getElementById('toast');
-  const toastMessage = document.getElementById('toast-message');
-
-  // Hàm hiển thị toast notification
-  function showToast(message: string, type: 'success' | 'error') {
-    if (!toast || !toastMessage) return;
-    
-    toastMessage.textContent = message;
-    toast.className = `toast ${type}`;
-    toast.classList.remove('hidden', 'hiding');
-    
-    // Tự động ẩn sau 4 giây
-    setTimeout(() => {
-      toast.classList.add('hiding');
-      setTimeout(() => {
-        toast.classList.add('hidden');
-        toast.classList.remove('hiding', 'success', 'error');
-      }, 300);
-    }, 4000);
-  }
-
-  if (form && emailInput && submitBtn) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = emailInput.value.trim();
-      if (!email) return;
-      
-      // Hiển thị loading state
-      if (btnText) btnText.textContent = 'Đang gửi...';
-      if (btnSpinner) btnSpinner.classList.remove('hidden');
-      submitBtn.disabled = true;
-      
-      try {
-        const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbwHnsb_JdGIt65kwgnR1E1VzaSHgcPFR5X6cjU1R8rjTA7awfoEPXJh9ueN_LY4yOFZ/exec',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'text/plain',
-            },
-            body: JSON.stringify({ email }),
-          }
-        );
-        
-        if (response.ok) {
-          // Reset button state
-          if (btnText) btnText.textContent = 'Bắt đầu ngay';
-          if (btnSpinner) btnSpinner.classList.add('hidden');
-          submitBtn.disabled = false;
-          emailInput.value = '';
-          showToast('✅ Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.', 'success');
-        } else {
-          throw new Error('Gửi email thất bại');
-        }
-      } catch (error) {
-        console.error('Error submitting email:', error);
-        // Reset button state
-        if (btnText) btnText.textContent = 'Bắt đầu ngay';
-        if (btnSpinner) btnSpinner.classList.add('hidden');
-        submitBtn.disabled = false;
-        showToast('❌ Đăng ký thất bại. Vui lòng thử lại sau.', 'error');
-      }
-    });
-  }
-</script>
-
