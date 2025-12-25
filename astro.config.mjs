@@ -17,4 +17,12 @@ export default defineConfig({
   ],
   output: 'static',
   compressHTML: true,
+  vite: {
+    preview: {
+      allowedHosts: ['rms.io.vn'],
+    },
+    server: {
+      allowedHosts: ['rms.io.vn'],
+    },
+  },
 });
