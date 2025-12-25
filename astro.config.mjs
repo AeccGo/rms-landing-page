@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://your-restaurant-rms.com', // Thay đổi URL thực tế của bạn
+  site: 'https://rms.io.vn',
   integrations: [
     tailwind({
       applyBaseStyles: false,
