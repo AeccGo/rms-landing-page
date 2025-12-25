@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ContactModal from '../components/ContactModal.astro';
 
 interface Props {
   title: string;
@@ -109,7 +110,7 @@ const structuredData = [
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    
+
     <!-- Additional SEO Meta -->
     <meta name="geo.region" content="VN" />
     <meta name="geo.placename" content="Vietnam" />
@@ -118,8 +119,81 @@ const structuredData = [
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Optimization for Zalo & UTM Tracking -->
+    <script is:inline>
+      (function() {
+        // 1. Capture and persist UTM parameters
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'zalo'];
+          const utmData = {};
+          let hasUtm = false;
+
+          utmKeys.forEach(key => {
+            const value = urlParams.get(key);
+            if (value) {
+              utmData[key] = value;
+              hasUtm = true;
+            }
+          });
+
+          if (hasUtm) {
+            // Store UTM data for form submission
+            sessionStorage.setItem('rms_marketing_data', JSON.stringify({
+              ...utmData,
+              timestamp: new Date().toISOString(),
+              referrer: document.referrer
+            }));
+
+            // 2. Clean URL - Remove tracking params from address bar for a better UX
+            const cleanUrl = window.location.origin + window.location.pathname + window.location.hash;
+            window.history.replaceState({}, document.title, cleanUrl);
+          }
+        } catch (e) {
+          console.error('Error handling UTM parameters:', e);
+        }
+
+        // 3. User Agent Detection (Zalo, etc.)
+        const ua = navigator.userAgent || navigator.vendor || (window).opera;
+        const isZalo = /Zalo/i.test(ua);
+        if (isZalo) {
+          document.documentElement.classList.add('is-zalo');
+        }
+
+        // 4. Mobile Viewport Height Fix (--vh)
+        // Helps with Zalo in-app browser and other mobile browsers where 100vh can be problematic
+        const fixViewportHeight = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        fixViewportHeight();
+        window.addEventListener('resize', fixViewportHeight);
+        window.addEventListener('orientationchange', fixViewportHeight);
+      })();
+    </script>
+
+    <style is:global>
+      /* Use the --vh variable if available, fallback to 1vh */
+      :root {
+        --vh: 1vh;
+      }
+
+      /* Avoid layout jumps in Zalo/Mobile Browsers when UI elements toggle */
+      .h-screen-safe {
+        height: 100vh; /* Fallback */
+        height: calc(var(--vh) * 100);
+      }
+
+      .min-h-screen-safe {
+        min-height: 100vh; /* Fallback */
+        min-height: calc(var(--vh) * 100);
+      }
+    </style>
   </head>
   <body>
+    <ContactModal />
     <slot />
   </body>
 </html>

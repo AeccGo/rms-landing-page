@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FeatureCard from '../components/FeatureCard.astro';
-import ContactModal from '../components/ContactModal.astro';
 import CTASection from '../components/CTASection.astro';
 
 const title = 'Tính năng | RMS - Hệ thống quản lý nhà hàng toàn diện';
@@ -12,7 +11,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
 
 <BaseLayout title={title} description={description}>
   <Header />
-  
+
   <main>
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-24">
@@ -20,14 +19,14 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
-      
+
       <div class="container-custom py-20 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
             Tính năng <span class="text-gradient">đầy đủ</span>
           </h1>
           <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up">
-            Tất cả công cụ bạn cần để quản lý nhà hàng hiệu quả, từ đơn giản đến phức tạp - 
+            Tất cả công cụ bạn cần để quản lý nhà hàng hiệu quả, từ đơn giản đến phức tạp -
             <span class="text-gradient font-semibold">hoàn toàn miễn phí</span>
           </p>
         </div>
@@ -117,8 +116,8 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Menu</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Hệ thống quản lý menu của RMS cho phép bạn tạo và quản lý menu một cách dễ dàng và trực quan. 
-                    Bạn có thể thêm hình ảnh đẹp mắt cho từng món ăn, thiết lập giá cả linh hoạt, phân loại theo danh mục, 
+                    Hệ thống quản lý menu của RMS cho phép bạn tạo và quản lý menu một cách dễ dàng và trực quan.
+                    Bạn có thể thêm hình ảnh đẹp mắt cho từng món ăn, thiết lập giá cả linh hoạt, phân loại theo danh mục,
                     và cập nhật thông tin real-time cho tất cả các kênh bán hàng.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -150,7 +149,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Đơn hàng</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Xử lý đơn hàng nhanh chóng và hiệu quả với hệ thống quản lý đơn hàng thông minh. Theo dõi trạng thái 
+                    Xử lý đơn hàng nhanh chóng và hiệu quả với hệ thống quản lý đơn hàng thông minh. Theo dõi trạng thái
                     đơn hàng real-time, in hóa đơn tự động, và quản lý thanh toán một cách chuyên nghiệp.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -182,7 +181,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Bàn</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Sơ đồ bàn trực quan giúp bạn quản lý không gian nhà hàng một cách hiệu quả. Đặt bàn online, theo dõi 
+                    Sơ đồ bàn trực quan giúp bạn quản lý không gian nhà hàng một cách hiệu quả. Đặt bàn online, theo dõi
                     trạng thái bàn real-time, và tối ưu hóa việc sử dụng không gian để phục vụ nhiều khách hàng hơn.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -214,7 +213,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Nhân viên</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Quản lý nhân viên một cách chuyên nghiệp với hệ thống phân quyền chi tiết, chấm công tự động, 
+                    Quản lý nhân viên một cách chuyên nghiệp với hệ thống phân quyền chi tiết, chấm công tự động,
                     tính lương, và theo dõi hiệu suất làm việc. Giúp bạn quản lý đội ngũ hiệu quả hơn.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -246,7 +245,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Báo cáo & Phân tích</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Dashboard trực quan với các báo cáo chi tiết về doanh thu, chi phí, lợi nhuận. Phân tích xu hướng 
+                    Dashboard trực quan với các báo cáo chi tiết về doanh thu, chi phí, lợi nhuận. Phân tích xu hướng
                     và đưa ra dự báo để giúp bạn đưa ra quyết định kinh doanh thông minh hơn.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -278,7 +277,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Thanh toán đa dạng</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Hỗ trợ nhiều hình thức thanh toán để đáp ứng nhu cầu đa dạng của khách hàng. Từ tiền mặt, thẻ tín dụng, 
+                    Hỗ trợ nhiều hình thức thanh toán để đáp ứng nhu cầu đa dạng của khách hàng. Từ tiền mặt, thẻ tín dụng,
                     ví điện tử đến QR code, tất cả đều được tích hợp một cách mượt mà.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -310,7 +309,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Đặt hàng QR</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Khách hàng chỉ cần quét QR code để xem menu và đặt món trực tiếp từ điện thoại. Giảm thời gian chờ đợi, 
+                    Khách hàng chỉ cần quét QR code để xem menu và đặt món trực tiếp từ điện thoại. Giảm thời gian chờ đợi,
                     tăng trải nghiệm khách hàng, và giảm tải công việc cho nhân viên.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -342,7 +341,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Quản lý Kho</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Theo dõi tồn kho real-time, cảnh báo hết hàng tự động, quản lý nhập xuất kho, và tính giá vốn tự động. 
+                    Theo dõi tồn kho real-time, cảnh báo hết hàng tự động, quản lý nhập xuất kho, và tính giá vốn tự động.
                     Giúp bạn kiểm soát chi phí và đảm bảo luôn có đủ nguyên liệu phục vụ.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -374,7 +373,7 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
                 <div class="flex-1">
                   <h3 class="text-2xl font-bold mb-4 text-white">Thông báo & Nhắc nhở</h3>
                   <p class="text-gray-300 mb-4 leading-relaxed">
-                    Hệ thống thông báo thông minh giúp bạn không bỏ lỡ bất kỳ thông tin quan trọng nào. Từ thông báo đơn hàng mới, 
+                    Hệ thống thông báo thông minh giúp bạn không bỏ lỡ bất kỳ thông tin quan trọng nào. Từ thông báo đơn hàng mới,
                     nhắc nhở bàn sắp hết giờ, đến cảnh báo tồn kho và thông báo khuyến mãi.
                   </p>
                   <ul class="space-y-2 text-gray-300">
@@ -408,6 +407,5 @@ const description = 'Khám phá tất cả các tính năng mạnh mẽ của RM
   </main>
 
   <Footer />
-  <ContactModal />
 </BaseLayout>
 

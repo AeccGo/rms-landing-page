@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import FeatureCard from '../components/FeatureCard.astro';
-import ContactModal from '../components/ContactModal.astro';
 
 const title = 'Hệ thống quản lý nhà hàng toàn diện | RMS - Miễn phí hoàn toàn';
 const description = 'Giải pháp quản lý nhà hàng hiện đại miễn phí hoàn toàn với đầy đủ tính năng: quản lý đơn hàng, bàn, menu, nhân viên, báo cáo. Tăng hiệu quả vận hành và doanh thu.';
@@ -12,7 +11,7 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
 
 <BaseLayout title={title} description={description}>
   <Header />
-  
+
   <main>
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
@@ -21,8 +20,8 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
-      
-      <div class="container-custom h-screen flex items-center justify-center relative z-10">
+
+      <div class="container-custom h-screen-safe flex items-center justify-center relative z-10">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-4xl !leading-[1.35] sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
             Quản lý nhà hàng{' '}
@@ -30,15 +29,15 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
             <br />
             <span class="text-gradient">Tăng trưởng bền vững</span>
           </h1>
-          
+
           <script>
             document.addEventListener('DOMContentLoaded', function() {
               const animatedText = document.getElementById('hero-animated-text');
               if (!animatedText) return;
-              
+
               const wordsAttr = animatedText.getAttribute('data-words');
               if (!wordsAttr) return;
-              
+
               let words: string[];
               try {
                 words = JSON.parse(wordsAttr);
@@ -46,19 +45,19 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
                 console.error('Error parsing words:', e);
                 return;
               }
-              
+
               if (!words || words.length === 0) return;
-              
+
               let currentWordIndex = 0;
               let currentCharIndex = 0;
               let isDeleting = false;
               let typingSpeed = 100;
-              
+
               function typeWord() {
                 if (!animatedText) return;
-                
+
                 const currentWord = words[currentWordIndex];
-                
+
                 if (isDeleting) {
                   animatedText.textContent = currentWord.substring(0, currentCharIndex - 1);
                   currentCharIndex--;
@@ -68,7 +67,7 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
                   currentCharIndex++;
                   typingSpeed = 100;
                 }
-                
+
                 if (!isDeleting && currentCharIndex === currentWord.length) {
                   typingSpeed = 2000;
                   isDeleting = true;
@@ -77,10 +76,10 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
                   currentWordIndex = (currentWordIndex + 1) % words.length;
                   typingSpeed = 500;
                 }
-                
+
                 setTimeout(typeWord, typingSpeed);
               }
-              
+
               setTimeout(() => {
                 if (animatedText && words.length > 0) {
                   typeWord();
@@ -89,7 +88,7 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
             });
           </script>
           <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
-            Hệ thống quản lý nhà hàng toàn diện <span class="text-gradient font-semibold">miễn phí hoàn toàn</span> với đầy đủ tính năng từ quản lý đơn hàng, 
+            Hệ thống quản lý nhà hàng toàn diện <span class="text-gradient font-semibold">miễn phí hoàn toàn</span> với đầy đủ tính năng từ quản lý đơn hàng,
             bàn, menu đến báo cáo doanh thu. Giúp bạn vận hành hiệu quả và tăng trưởng nhanh chóng.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
@@ -297,6 +296,5 @@ const description = 'Giải pháp quản lý nhà hàng hiện đại miễn ph�
   </main>
 
   <Footer />
-  <ContactModal />
 </BaseLayout>
 
