@@ -1,0 +1,25 @@
+name: Trigger Landing Page Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-deploy:
+    name: Trigger Deployment in Main Repo
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger deployment workflow
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.DEPLOY_DISPATCH_TOKEN }}
+          repository: AeccGo/rms-setup-server
+          event-type: deploy-landing-page
+          client-payload: |
+            {
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}",
+              "repository": "${{ github.repository }}"
+            }
